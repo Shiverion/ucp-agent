@@ -1,10 +1,10 @@
-# 🌸 Universal Commerce Protocol (UCP) Agent
+#  Universal Commerce Protocol (UCP) Agent
 
-> **Status**: 🚀 Advanced Implementation (Phase 3+ Complete)
+
 
 This project allows AI Agents to shop autonomously. It implements the **Universal Commerce Protocol (UCP)**, standardized by Google/Shopify, enabling seamless discovery, search, checkout, and order tracking between AI and Commerce Backends.
 
-## ✨ Key Features & Improvements
+##  Key Features & Improvements
 
 We have significantly expanded upon the initial plan, delivering a production-ready demo with advanced capabilities:
 
@@ -26,7 +26,7 @@ We have significantly expanded upon the initial plan, delivering a production-re
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 *   **Backend**: Python 3.10+, FastAPI, UCP Standards.
 *   **Frontend**: React, Vite, CSS Modules.
@@ -35,7 +35,7 @@ We have significantly expanded upon the initial plan, delivering a production-re
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 *   Python 3.10+
