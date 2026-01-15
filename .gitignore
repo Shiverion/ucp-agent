@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+
+# Node/React
+node_modules/
+dist/
+.DS_Store
+
+# User Exclusions
+plan.md
+test_*.py
+tests/
+samples/
+scripts/
+
+# Logs and Data
+*.log
+*.sqlite
+data/
+*.db
+
+# Helper scripts
+kill_servers.ps1

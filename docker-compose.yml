@@ -1,0 +1,16 @@
+services:
+  server:
+    build: .
+    ports:
+      - "8183:8183"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - ./data:/app/data
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
