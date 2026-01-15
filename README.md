@@ -100,4 +100,3 @@ ucp/
 
 ---
 
-*Note: `plan.md` and testing scripts have been excluded from this repository structure for cleanliness.*
