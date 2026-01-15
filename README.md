@@ -92,4 +92,12 @@ ucp/
 
 ---
 
+## 📚 Official Documentation
+
+*   **UCP Specification**: [ucp.dev](https://ucp.dev) — Authoritative JSON schemas for Shopping, Checkout, and Discovery.
+*   **Python SDK**: [github.com/Universal-Commerce-Protocol/python-sdk](https://github.com/Universal-Commerce-Protocol/python-sdk) — Core library for building UCP-compliant servers and agents.
+*   **Samples Repository**: [github.com/Universal-Commerce-Protocol/samples](https://github.com/Universal-Commerce-Protocol/samples) — Full "Flower Shop" demo implementation.
+
+---
+
 *Note: `plan.md` and testing scripts have been excluded from this repository structure for cleanliness.*
