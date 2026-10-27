@@ -35,6 +35,54 @@ We have significantly expanded upon the initial plan, delivering a production-re
 
 ---
 
+## System Design
+
+### Requirements
+
+**Functional**
+- Discover products, search shop catalogs, create and complete checkout sessions, and retrieve orders through a UCP-style server.
+- Let a Gemini shopping agent query multiple shop catalogs and present results in a React interface.
+
+**Non-functional**
+- The merchant API uses FastAPI and a local SQLite database; shop discovery/search and agent calls use HTTP.
+- The federation agent queries configured shops concurrently with bounded HTTP timeouts.
+
+### High-Level Architecture
+
+```text
+React/Vite client → FastAPI UCP merchant API → SQLite products / checkouts / orders
+                 → Gemini shopping agent → federated shop search over HTTP
+```
+
+`src/server/multi_shop.py` runs three sample shops with static catalogs. Checkout and order handling are demo flows; no external payment processor is configured.
+
+### Data Model / API Contract
+
+| API group | Responsibility |
+| --- | --- |
+| `/.well-known/ucp` | Publish merchant capabilities |
+| `/products*` | List, search, and retrieve catalog items |
+| `/checkout-sessions*` | Create, update, complete, or cancel checkout sessions |
+| `/orders/{order_id}` | Retrieve an order record |
+
+### Scale and Reliability
+
+- The sample shops and SQLite files are local single-process components; no shared production inventory service is configured.
+- Federation search runs concurrently and uses a 10-second HTTP timeout per shop request.
+
+### Trade-offs
+
+| Decision | Benefit | Cost |
+| --- | --- | --- |
+| Use a local SQLite merchant store | Simple setup for protocol demonstrations | Limited coordination across multiple server replicas |
+| Federate a small fixed set of shops | Shows cross-shop search behavior | Shop URLs and catalogs require explicit configuration |
+
+### What to Revisit as It Grows
+
+- Replace sample catalogs with merchant-owned inventory APIs.
+- Add durable idempotency and payment-provider integration before processing real orders.
+- Move shared order state to a database designed for concurrent deployments.
+
 ##  Quick Start
 
 ### Prerequisites
